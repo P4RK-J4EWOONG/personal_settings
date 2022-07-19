@@ -1,7 +1,15 @@
 # personal_settings
 
-* hammerspoon
-  * init.lua
-* vscode
-  * extensions.list
-  * settings.json
+``` bash
+├── README.md
+├── Übersicht
+│   └── widgets.list
+├── hammerspoon
+│   └── init.lua
+├── vscode
+│   ├── extensions.list
+│   └── settings.json
+└── wm
+    ├── .skhdrc
+    └── .yabairc
+```
