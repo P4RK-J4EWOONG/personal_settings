@@ -147,16 +147,24 @@ end
 
 -- hs.window.animationDuration = 0
 
-sc_bind("1", positionWindow(0, 0, 1/2, 1))
-sc_bind("2", positionWindow(1/2, 0, 1/2, 1))
+sc_bind("[", positionWindow(0, 0, 1/2, 1))
+sc_bind("]", positionWindow(1/2, 0, 1/2, 1))
 
-sc_bind("3", positionWindow(0, 0, 1/2, 1/2))
-sc_bind("4", positionWindow(1/2, 0, 1/2, 1/2))
-sc_bind("5", positionWindow(0, 1/2, 1/2, 1/2))
-sc_bind("6", positionWindow(1/2, 1/2, 1/2, 1/2))
+sc_bind("1", positionWindow(0, 0, 1/2, 1/2))
+sc_bind("2", positionWindow(1/2, 0, 1/2, 1/2))
+sc_bind("3", positionWindow(0, 1/2, 1/2, 1/2))
+sc_bind("4", positionWindow(1/2, 1/2, 1/2, 1/2))
 
-sc_bind("[", positionWindow(0, 0, 2/3, 1))
-sc_bind("]", positionWindow(2/3, 0, 1/3, 1))
+sc_bind("v", positionWindow(0, 0, 2/3, 1))
+sc_bind("p", positionWindow(2/3, 0, 1/3, 1))
+
+sc_bind("f", function()
+    hs.window.focusedWindow():toggleFullScreen()
+end)
+
+sc_bind("c", function()
+    hs.window.focusedWindow():centerOnScreen()
+end)
 
 -- grid based window functions
 
@@ -232,3 +240,81 @@ acs_bind("h", hs.grid.pushWindowLeft)
 acs_bind("j", hs.grid.pushWindowDown)
 acs_bind("k", hs.grid.pushWindowUp)
 
+-- -------------------------------------------------------------------------- --
+--                           Focus on other Windows                           --
+-- -------------------------------------------------------------------------- --
+hs.hints.fontName = "Galmuri11"
+hs.hints.fontSize = 14
+hs.hints.showTitleThresh = 0
+hs.hints.iconAlpha = 1
+
+sc_bind("\\", hs.hints.windowHints)
+sc_bind("r", hs.reload)
+
+-- -------------------------------------------------------------------------- --
+--                         Move window to other spaces                        --
+-- -------------------------------------------------------------------------- --
+
+function getGoodFocusedWindow(nofull)
+    local win = hs.window.focusedWindow()
+    if not win or not win:isStandard() then return end
+    if notfull and win:isFullScreen() then return end
+    return win
+end
+
+function flashScreen(screen)
+    local flash = hs.canvas.new(screen:fullFrame()):appendElements(
+        {
+            action = "fill",
+            fillColor = {alpha = 0.25, red = 1},
+            type = "rectangle"
+        })
+    flash:show()
+    hs.timer.doAfter(.15,function () flash:delete() end)
+end
+
+function moveWindowOneSpace(dir, switch)
+    local win = getGoodFocusedWindow(true)
+    if not win then return end
+    local screen = win:screen()
+    local uuid = screen:getUUID()
+    local userSpaces = nil
+    for k,v in pairs(hs.spaces.allSpaces()) do
+        userSpaces=v
+        if k == uuid then break end
+    end
+    if not userSpaces then return end
+    local thisSpace = hs.spaces.windowSpaces(win) -- first space win appears on
+    if not thisSpace then return else thisSpace = thisSpace[1] end
+    local last = nil
+    local skipSpaces=0
+for _, spc in ipairs(userSpaces) do
+        if hs.spaces.spaceType(spc) ~="user" then -- skippable space
+        skipSpaces = skipSpaces+1
+        else
+        if last and
+            ((dir == "left" and spc == thisSpace) or
+            (dir == "right" and last == thisSpace)) then
+            local newSpace = (dir == "left" and last or spc)
+            if switch then
+            -- spaces.gotoSpace(newSpace)  -- also possible, invokes MC
+            switchSpace(skipSpaces + 1, dir)
+            end
+            hs.spaces.moveWindowToSpace(win, newSpace)
+            return
+        end
+        last = spc	 -- Haven't found it yet...
+        skipSpaces = 0
+        end
+    end
+    flashScreen(screen)   -- Shouldn't get here, so no space found
+end
+
+
+hs.hotkey.bind(altctrlshift, "[", nil, function()
+    moveWindowOneSpace("left", false)
+end)
+
+hs.hotkey.bind(altctrlshift, "]", nil, function()
+    moveWindowOneSpace("right", false)
+end)
