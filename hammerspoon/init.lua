@@ -122,10 +122,10 @@ function launchApp(name)
     end
 end
 
--- h_bind("e", launchApp("Visual Studio Code"))
--- h_bind("c", launchApp("Safari"))
--- h_bind("t", launchApp("iTerm"))
--- h_bind("z", launchApp("Finder"))
+sc_bind("s", launchApp("Safari"))
+sc_bind("a", launchApp("Visual Studio Code"))
+sc_bind("z", launchApp("Finder"))
+sc_bind("t", launchApp("iTerm"))
 
 -- -------------------------------------------------------------------------- --
 --                                Window Manger                               --
@@ -248,7 +248,7 @@ hs.hints.fontSize = 14
 hs.hints.showTitleThresh = 0
 hs.hints.iconAlpha = 1
 
-sc_bind("\\", hs.hints.windowHints)
+sc_bind("g", hs.hints.windowHints)
 sc_bind("r", hs.reload)
 
 -- -------------------------------------------------------------------------- --
