@@ -13,3 +13,10 @@
     ├── .skhdrc
     └── .yabairc
 ```
+
+## Todo
+
+- [ ] yabai, skhd ➡ hammerspoon
+- [ ] Übersicht ➡️ hammerspoon
+- [ ] Add Hammerspoon's other dependency
+- [ ] Better Documentation
