@@ -1,4 +1,20 @@
 -- -------------------------------------------------------------------------- --
+--                                   Styles                                   --
+-- -------------------------------------------------------------------------- --
+hs.hints.fontName = "Galmuri11"
+hs.hints.fontSize = 14
+hs.hints.showTitleThresh = 0
+hs.hints.iconAlpha = 1
+
+hs.alert.defaultStyle.textFont = "Galmuri11"
+hs.alert.defaultStyle.textColor = { white = 1, alpha = 1 }
+hs.alert.defaultStyle.textSize = 14
+hs.alert.defaultStyle.radius = 4
+hs.alert.defaultStyle.padding = 20
+
+hs.alert.show("<Hammerspoon>\n다시 설정하는 중...")
+
+-- -------------------------------------------------------------------------- --
 --                   Pressing ESC changes Korean to English                   --
 -- -------------------------------------------------------------------------- --
 local inputEnglish = "com.apple.keylayout.ABC"
@@ -90,7 +106,6 @@ function acs_bind(key, func)
     hs.hotkey.bind(altctrlshift, key, func)
 end
 
-hs.alert.show("Relaod Hammerspoon")
 
 -- -------------------------------------------------------------------------- --
 --                        Open the app with a shortcut                        --
@@ -145,7 +160,7 @@ function positionWindow(x, y, w, h)
     end
 end
 
--- hs.window.animationDuration = 0
+hs.window.animationDuration = 0
 
 sc_bind("[", positionWindow(0, 0, 1/2, 1))
 sc_bind("]", positionWindow(1/2, 0, 1/2, 1))
@@ -154,6 +169,7 @@ sc_bind("1", positionWindow(0, 0, 1/2, 1/2))
 sc_bind("2", positionWindow(1/2, 0, 1/2, 1/2))
 sc_bind("3", positionWindow(0, 1/2, 1/2, 1/2))
 sc_bind("4", positionWindow(1/2, 1/2, 1/2, 1/2))
+sc_bind("\\", positionWindow(0, 0, 1, 1))
 
 sc_bind("v", positionWindow(0, 0, 2/3, 1))
 sc_bind("p", positionWindow(2/3, 0, 1/3, 1))
@@ -243,10 +259,6 @@ acs_bind("k", hs.grid.pushWindowUp)
 -- -------------------------------------------------------------------------- --
 --                           Focus on other Windows                           --
 -- -------------------------------------------------------------------------- --
-hs.hints.fontName = "Galmuri11"
-hs.hints.fontSize = 14
-hs.hints.showTitleThresh = 0
-hs.hints.iconAlpha = 1
 
 sc_bind("g", hs.hints.windowHints)
 sc_bind("r", hs.reload)
@@ -318,3 +330,138 @@ end)
 hs.hotkey.bind(altctrlshift, "]", nil, function()
     moveWindowOneSpace("right", false)
 end)
+
+-- -------------------------------------------------------------------------- --
+--                               RoundedCorners                               --
+-- -------------------------------------------------------------------------- --
+RoundedCorners = hs.loadSpoon("RoundedCorners")
+RoundedCorners.radius = 15
+RoundedCorners:start()
+
+-- -------------------------------------------------------------------------- --
+--                                  TimeFlow                                  --
+-- -------------------------------------------------------------------------- --
+FnMate = hs.loadSpoon("TimeFlow")
+
+-- -------------------------------------------------------------------------- --
+--                                  micCheck                                  --
+-- -------------------------------------------------------------------------- --
+function micCheck()
+    if hs.audiodevice.defaultInputDevice():muted() then
+        hs.audiodevice.defaultInputDevice():setMuted(false)
+
+        hs.alert.show("🎙 마이크 : 켜짐")
+    else
+        hs.audiodevice.defaultInputDevice():setMuted(true)
+        hs.alert.show("🎙 마이크 : 음소거")
+    end
+end
+
+acs_bind("m", function()
+    micCheck()
+end)
+
+-- -------------------------------------------------------------------------- --
+--                                   VimMode                                  --
+-- -------------------------------------------------------------------------- --
+local VimMode = hs.loadSpoon("VimMode")
+local vim = VimMode:new()
+
+vim
+    :disableForApp('Code')
+    :disableForApp('zoom.us')
+    :disableForApp('iTerm')
+    :disableForApp('iTerm2')
+    :disableForApp('Terminal')
+
+vim:shouldDimScreenInNormalMode(false)
+vim:shouldShowAlertInNormalMode(true)
+vim:setAlertFont("Galmuri11")
+vim:bindHotKeys({ enter = { {'ctrl'}, ';' } })
+
+-- -------------------------------------------------------------------------- --
+--                                   battery                                  --
+-- -------------------------------------------------------------------------- --
+
+-- Battery
+local previousPowerSource = hs.battery.powerSource()
+
+function minutesToHours(minutes)
+    if minutes <= 0 then
+        return "0:00";
+    else
+        hours = string.format("%d", math.floor(minutes / 60))
+        mins = string.format("%02.f", math.floor(minutes - (hours * 60)))
+        return string.format("%s시간 %s분", hours, mins)
+    end
+end
+
+function showBatteryStatus()
+    local message
+
+    if hs.battery.isCharging() then
+        local pct = hs.battery.percentage()
+        local untilFull = hs.battery.timeToFullCharge()
+        message = "🔌 충전 중:"
+
+        if untilFull == -1 then
+        message = string.format("%s %.0f%% (calculating...)", message, pct);
+        else
+        message = string.format("%s %.0f%% (%s 남음)", message, pct, minutesToHours(untilFull))
+        end
+    elseif hs.battery.powerSource() == "Battery Power" then
+        local pct = hs.battery.percentage()
+        local untilEmpty = hs.battery.timeRemaining()
+        message = "🔋 배터리:"
+
+        if untilEmpty == -1 then
+        message = string.format("%s %.0f%% (calculating...)", message, pct)
+        else
+        message = string.format("%s %.0f%% (%s 남음)", message, pct, minutesToHours(untilEmpty))
+        end
+    else
+        message = "Fully charged"
+    end
+
+    hs.alert.closeAll()
+    hs.alert.show(message)
+end
+
+function batteryChangedCallback()
+    local powerSource = hs.battery.powerSource()
+
+    if powerSource ~= previousPowerSource then
+        showBatteryStatus()
+        previousPowerSource = powerSource;
+    end
+end
+
+hs.battery.watcher.new(batteryChangedCallback):start()
+
+sc_bind("s", showBatteryStatus)
+
+-- -------------------------------------------------------------------------- --
+--                          Reconnect to current Wifi                         --
+-- -------------------------------------------------------------------------- --
+function ssidChangedCallback()
+    local ssid = hs.wifi.currentNetwork()
+    if ssid then
+        hs.alert.closeAll()
+        hs.alert.show("📡 Network 연결: " .. ssid)
+    end
+end
+
+hs.wifi.watcher.new(ssidChangedCallback):start()
+
+hs.hotkey.bind(shiftctrl, "w", nil, function()
+    local ssid = hs.wifi.currentNetwork()
+    if not ssid then return end
+
+    hs.alert.closeAll()
+    hs.alert.show("📡 Network 재설정 : " .. ssid)
+    hs.execute("networksetup -setairportpower en0 off")
+    hs.execute("networksetup -setairportpower en0 on")
+end)
+
+hs.hotkey.bind(shiftctrl, "i", hs.window.frontmostWindow().focusWindowEast)
+hs.hotkey.bind(shiftctrl, "u", hs.window.frontmostWindow().focusWindowWest)
