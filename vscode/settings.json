@@ -13,12 +13,14 @@
     "editor.wordWrapColumn": 120
   },
   "[python]": {
-    "editor.defaultFormatter": null,
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
+    "editor.formatOnType": true,
     "editor.insertSpaces": true,
     "editor.tabSize": 4
   },
+  "bujo.scheduler.plannerPrefix": "daily.journal",
   "codesnap.transparentBackground": true,
   "commandOnAllFiles.commands": {
     "Flutter Stylizer": {
@@ -42,20 +44,24 @@
   "dart.previewFlutterUiGuides": true,
   "dart.warnWhenEditingFilesOutsideWorkspace": false,
   "debug.console.fontFamily": "NanumGothicCoding",
+  "debug.console.fontSize": 14,
   "dendron.defaultJournalDateFormat": "",
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
+  "editor.colorDecoratorsLimit": 5000,
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontFamily": "NanumGothicCoding,'D2Coding ligature', FiraCode Nerd Font",
+  // 항상 커서가 중앙을 향하게 만들기
+  // "editor.cursorSurroundingLines": 100,
+  "editor.fontFamily": "'D2Coding ligature', Galmuri7, NanumGothicCoding, FiraCode Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.glyphMargin": true,
   "editor.guides.bracketPairs": "active",
+  "editor.inlineSuggest.enabled": true,
   "editor.lineNumbers": "on",
-  "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
   "editor.renderLineHighlight": "all",
   "editor.rulers": [
@@ -90,11 +96,10 @@
   "editor.unicodeHighlight.invisibleCharacters": false,
   // "editor.accessibilitySupport": "on"
   "editor.wordWrap": "off",
-  // "editor.wordWrapColumn": 120,
   "explorer.compactFolders": false,
+  "explorer.incrementalNaming": "smart",
+  "explorer.openEditors.sortOrder": "alphabetical",
   "files.insertFinalNewline": true,
-  // 항상 커서가 중앙을 향하게 만들기
-  // "editor.cursorSurroundingLines": 100,
   "files.trimTrailingWhitespace": true,
   "flutterStylizer": {
     "groupAndSortGetterMethods": true,
@@ -121,6 +126,14 @@
   "footsteps.highlightColorMaxOpacity": 0.1,
   "git.autofetch": true,
   "git.autoStash": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": false,
+    "plaintext": true,
+    "scminput": false,
+    "yaml": false
+  },
+  "hediet.vscode-drawio.theme": "dark",
   "indentRainbow.colors": [
     "rgba(249, 38, 114,0.1)",
     "rgba(253, 151, 31,0.1)",
@@ -130,6 +143,7 @@
     "rgba(173, 129, 255,0.1)"
   ],
   "indentRainbow.errorColor": "rgba(255, 255, 255,0.6)",
+  "indentRainbow.lightIndicatorStyleLineWidth": 5,
   "kanban.check.checkWhenMoveToDone": true,
   "kanban.check.uncheckWhenMoveFromDone": true,
   "kanban.column.done": "Done, done",
@@ -205,7 +219,8 @@
   "mytime.taskTimePlaceholder": "언제까지?",
   "mytime.timeSpanStep": 1,
   "notebook.lineNumbers": "on",
-  "pasteImage.basePath": "${projectRoot}",
+  "pasteImage.path": "${currentFileDir}/assets/images",
+  "pasteImage.showFilePathConfirmInputBox": true,
   "python.formatting.blackPath": "/opt/homebrew/bin/black",
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
@@ -215,8 +230,14 @@
   "readTime.enabled": true,
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
+  "tailwindCSS.colorDecorators": false,
+  "terminal.explorerKind": "external",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.enableBell": true,
-  "terminal.integrated.fontFamily": "NanumGothicCoding",
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.gpuAcceleration": "off",
   "todo-tree.general.tagGroups": {
     "ACTIVE ITEMS": [
@@ -959,11 +980,14 @@
     }
   ],
   "vim.vimrc.enable": true,
-  "vim.vimrc.path": "$HOME/.config/nvim/init.lua",
+  "vim.vimrc.path": "/Users/parkjaewoong/.config/nvim/init.lua",
   "vscodeGoogleTranslate.preferredLanguage": "English",
+  "window.commandCenter": true,
+  "window.confirmBeforeClose": "keyboardOnly",
+  "window.zoomLevel": -1,
   "workbench.colorCustomizations": {
-    "editor.lineHighlightBackground": "#1073cf2d",
-    "editor.lineHighlightBorder": "#9fced11f",
+    "editor.lineHighlightBackground": "#99adbf2d",
+    "editor.lineHighlightBorder": "#187a751f",
     "editorBracketHighlight.foreground1": "#f92672",
     "editorBracketHighlight.foreground2": "#fd971f",
     "editorBracketHighlight.foreground3": "#e6db74",
@@ -973,12 +997,18 @@
     "editorBracketHighlight.unexpectedBracket.foreground": "#ffffff"
   },
   "workbench.colorTheme": "Popping and Locking",
+  "workbench.editor.closeOnFileDelete": true,
   // "workbench.editor.tabCloseButton": "off",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
   "workbench.reduceMotion": "on",
+  "workbench.settings.openDefaultKeybindings": true,
   "workbench.startupEditor": "newUntitledFile",
-  "zenMode.centerLayout": false,
+  "workbench.tips.enabled": false,
+  "zenMode.fullScreen": false,
+  "zenMode.hideActivityBar": false,
   "zenMode.hideLineNumbers": false,
-  "zenMode.hideTabs": false
+  "zenMode.hideStatusBar": false,
+  "zenMode.hideTabs": false,
+  "editor.minimap.renderCharacters": false
 }
