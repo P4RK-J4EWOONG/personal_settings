@@ -39,11 +39,12 @@ yabai -m config window_shadow                off
 
 yabai -m config window_opacity               on
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.9
+yabai -m config normal_window_opacity        1.0
 
 yabai -m config insert_feedback_color        0xffd75f5f
 
 yabai -m config split_ratio                  0.5
+yabai -m config auto_balance                 on
 
 # general space settings
 
@@ -71,15 +72,15 @@ yabai -m rule --add app="Discord" manage=off
 yabai -m rule --add app="미리보기" manage=off
 yabai -m rule --add app="GitKraken" manage=off
 yabai -m rule --add app="Things" manage=off
-yabai -m rule --add app="IINA" manage=off
+# yabai -m rule --add app="IINA" manage=off
 yabai -m rule --add app="nimblenote" manage=off
+yabai -m rule --add app="Adobe Photoshop 2024" manage=off
 # yabai -m rule --add app="Code" opacity=0.90
 # yabai -m rule --add app="Safari" opacity=0.4
-# yabai -m rule --add app="카카오톡" opacity=0.8
+# yabai -m rule --add app="카카오톡" opacity=0.4
 
 # updates every 5 minutes
 
 frequency=10000
 
 echo "yabai configuration loaded.."
-

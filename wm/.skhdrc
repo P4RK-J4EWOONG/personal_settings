@@ -27,8 +27,7 @@ shift + ctrl - 8 : yabai -m space --focus 8
 shift + ctrl - 9 : yabai -m space --focus 9
 
 # modify space layout
-shift + cmd + ctrl - f : yabai -m space --layout float
-shift + cmd + ctrl - b : yabai -m space --layout bsp
+shift + ctrl - s : yabai -m window --toggle sticky
 
 # swap window
 shift + alt + ctrl - h : WIN_ID=$(yabai -m query --windows --window | jq '.id'); yabai -m window --swap west; [[ ! $? == 0 ]] && (yabai -m display --focus west; yabai -m window last --insert east; yabai -m window --focus $WIN_ID; yabai -m window --display prev; yabai -m window --focus $WIN_ID);
@@ -87,7 +86,6 @@ shift + cmd + ctrl - 9 : yabai -m window --space  9; yabai -m space --focus 9
 # float / unfloat window and center on screen
 # <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
 shift + ctrl - c : yabai -m window --toggle float; yabai -m window --grid 50:50:1:1:48:48
-shift + ctrl - f : yabai -m window --toggle float
 shift + ctrl - d : yabai -m window --toggle zoom-parent
 shift + ctrl - t : yabai -m window --toggle float; yabai -m window --grid 50:50:1:35:48:10
 
@@ -99,4 +97,3 @@ shift + ctrl - o : yabai -m window --toggle float; yabai -m window --grid 1:4:0:
 
 shift + ctrl - q : yabai -m display --focus 1
 shift + ctrl - w : yabai -m display --focus 2
-
