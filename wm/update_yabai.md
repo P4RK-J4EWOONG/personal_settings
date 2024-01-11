@@ -28,7 +28,7 @@ Follow these steps to update Yabai:
 
 5. Add the following line to the file, replacing `<user>` with your username, `<hash>` with the SHA-256 hash of the Yabai binary, and `<yabai>` with the path to the Yabai binary:
 
-    ```
+    ```bash
     <user> ALL=(root) NOPASSWD: sha256:<hash> <yabai> --load-sa
     ```
 
