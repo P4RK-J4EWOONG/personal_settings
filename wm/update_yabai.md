@@ -11,7 +11,7 @@ Follow these steps to update Yabai:
 2. Upgrade Yabai using Homebrew. Note that we're using the ARM64 architecture:
 
     ```bash
-    arch -arm64 brew upgrade yabai
+    brew upgrade yabai
     ```
 
 3. Start the Yabai service:
