@@ -26,6 +26,8 @@ shift + ctrl - 7 : yabai -m space --focus 7
 shift + ctrl - 8 : yabai -m space --focus 8
 shift + ctrl - 9 : yabai -m space --focus 9
 
+shift + ctrl + cmd - r : yabai --restart-service
+
 # modify space layout
 shift + ctrl - s : yabai -m window --toggle sticky
 
@@ -85,9 +87,9 @@ shift + cmd + ctrl - 9 : yabai -m window --space  9; yabai -m space --focus 9
 
 # float / unfloat window and center on screen
 # <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
-shift + ctrl - c : yabai -m window --toggle float; yabai -m window --grid 50:50:1:1:48:48
+shift + ctrl - c : yabai -m window --toggle float; yabai -m window --grid 100:100:1:1:98:98
 shift + ctrl - d : yabai -m window --toggle zoom-parent
-shift + ctrl - t : yabai -m window --toggle float; yabai -m window --grid 50:50:1:35:48:10
+shift + ctrl - t : yabai -m window --toggle float; yabai -m window --grid 50:100:1:35:98:20
 
 # float / unfloat window and code mode, phone mode on screen
 shift + ctrl - v : yabai -m window --toggle float; yabai -m window --grid 1:4:0:0:3:1
