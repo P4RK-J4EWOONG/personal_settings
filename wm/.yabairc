@@ -52,31 +52,32 @@ yabai -m config right_padding                10
 yabai -m config window_gap                   10
 yabai -m config external_bar                 all:0:40
 
-yabai -m rule --add app="Finder$" manage=off
-yabai -m rule --add app="Simulator" manage=off
-yabai -m rule --add app="qemu-system-aarch64" manage=off
-yabai -m rule --add app="^Scoot$" manage=off
-yabai -m rule --add app="시스템 설정$" manage=off
-yabai -m rule --add app="시스템 정보$" manage=off
-yabai -m rule --add app="AppCleaner" manage=off
-yabai -m rule --add app="Speediness" manage=off
-yabai -m rule --add app="Encrypto" manage=off
-yabai -m rule --add app="Shottr" manage=off
+yabai -m rule --add app   = "^Scoot$" manage=off
+yabai -m rule --add app   = "^Shottr$" manage=off
+yabai -m rule --add app   = "미리보기" manage=off
+yabai -m rule --add app   = "시스템 설정$" manage=off
+yabai -m rule --add app   = "시스템 정보$" manage=off
+yabai -m rule --add app   = "Adobe Photoshop 2024" manage=off
+yabai -m rule --add app   = "AppCleaner" manage=off
+yabai -m rule --add app   = "Discord" manage=off
+yabai -m rule --add app   = "Electron" manage=off
+yabai -m rule --add app   = "Encrypto" manage=off
+yabai -m rule --add app   = "Finder$" manage=off
+yabai -m rule --add app   = "GitKraken" manage=off
+yabai -m rule --add app   = "IINA" manage=off
+yabai -m rule --add app   = "iTerm2" manage=off
+yabai -m rule --add app   = "nimblenote" manage=off
+yabai -m rule --add app   = "qemu-system-aarch64" manage=off
+yabai -m rule --add app   = "Simulator" manage=off
+yabai -m rule --add app   = "Speediness" manage=off
+yabai -m rule --add app   = "Things" manage=off
+yabai -m rule --add app   = "Xcode" manage=off
 # yabai -m rule --add app="^Finder$" opacity=0.8
-yabai -m rule --add app="iTerm2" manage=off
-yabai -m rule --add app="Discord" manage=off
-yabai -m rule --add app="미리보기" manage=off
-yabai -m rule --add app="GitKraken" manage=off
-yabai -m rule --add app="Things" manage=off
-yabai -m rule --add app="IINA" manage=off
-yabai -m rule --add app="nimblenote" manage=off
-yabai -m rule --add app="Adobe Photoshop 2024" manage=off
-yabai -m rule --add app="Xcode" manage=off
-yabai -m rule --add app="Electron" manage=off
 # yabai -m rule --add app="Code" opacity=0.90
 # yabai -m rule --add app="Safari" opacity=0.4
 
 # updates every 5 minutes
 frequency=10000
+
 
 echo "yabai configuration loaded.."
