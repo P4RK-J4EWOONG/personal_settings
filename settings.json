@@ -5,17 +5,33 @@
 //  ╚████╔╝ ███████║╚██████╗╚██████╔╝██████╔╝███████╗
 //   ╚═══╝  ╚══════╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
 {
+  "[css]": {
+    "editor.defaultFormatter": "williamdang.vscode-simply-css-formatter"
+  },
   "[dart]": {
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.inlayHints.enabled": "on"
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.quickSuggestions": {
       "strings": true
     },
     "editor.suggest.insertMode": "replace"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "Koihik.vscode-lua-format"
   },
   "[markdown]": {
     "diffEditor.wordWrap": "inherit",
@@ -31,16 +47,38 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 4
   },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
+  "black-formatter.args": [
+    "--line-length=180"
+  ],
+  "bujo.scheduler.plannerPrefix": "daily.journal",
   "codesnap.transparentBackground": true,
-  "color-highlight.markRuler": false,
   "commandOnAllFiles.commands": {
     "Flutter Stylizer": {
       "command": "extension.flutterStylizer",
-      "includeFileExtensions": [".dart"]
+      "includeFileExtensions": [
+        ".dart"
+      ]
     },
     "Format File": {
       "command": "editor.action.formatDocument",
-      "includeFileExtensions": [".dart"]
+      "includeFileExtensions": [
+        ".dart"
+      ]
     }
   },
   "comment-divider.length": 120,
@@ -60,13 +98,13 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.colorDecoratorsLimit": 5000,
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "'D2Coding ligature', Galmuri7, NanumGothicCoding, FiraCode Nerd, 'FontNeo둥근모 Code'",
+  "editor.fontFamily": "'D2Coding ligature', GalmuriMono9, gamer, alagard, joystix, Galmuri7, NanumGothicCoding ",
   "editor.fontLigatures": true,
-  "editor.fontSize": 16,
+  "editor.fontSize": 17,
   // "editor.cursorSurroundingLines": 1000,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.glyphMargin": false,
+  // "editor.glyphMargin": false,
   "editor.guides.bracketPairs": "active",
   "editor.hideCursorInOverviewRuler": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
@@ -83,465 +121,6 @@
   // "editor.stickyScroll.enabled": true,
   "editor.suggest.preview": true,
   "editor.suggestSelection": "first",
-  "editor.unicodeHighlight.invisibleCharacters": false,
-  "editor.wordWrap": "off",
-  "explorer.compactFolders": false,
-  "explorer.incrementalNaming": "smart",
-  "explorer.openEditors.sortOrder": "alphabetical",
-  "explorer.openEditors.visible": 1,
-  "extensions.autoUpdate": false,
-  "files.autoSave": "afterDelay",
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "flutterStylizer": {
-    "groupAndSortGetterMethods": true,
-    "groupAndSortVariableTypes": true,
-    "memberOrdering": [
-      "public-constructor",
-      "named-constructors",
-      "public-static-variables",
-      "public-instance-variables",
-      "public-override-variables",
-      "private-static-variables",
-      "private-instance-variables",
-      "public-override-methods",
-      "public-other-methods",
-      "private-other-methods",
-      "build-method"
-    ],
-    "processEnumsLikeClasses": true,
-    "sortClassesWithinFile": true,
-    "sortOtherMethods": true
-  },
-  "footsteps.doHighlightChanges": true,
-  "footsteps.highlightColor": "rgb(255, 255, 255)",
-  "footsteps.highlightColorMaxOpacity": 0.1,
-  "git.autofetch": true,
-  "git.autoStash": true,
-  "git.openRepositoryInParentFolders": "never",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": true,
-    "markdown": false,
-    "scminput": false,
-    "yaml": false
-  },
-  "hediet.vscode-drawio.theme": "dark",
-  "indentRainbow.colors": [
-    "rgba(249, 38, 114,0.1)",
-    "rgba(253, 151, 31,0.1)",
-    "rgba(230, 219, 116,0.1)",
-    "rgba(166, 226, 46,0.1)",
-    "rgba(102, 216, 239,0.1)",
-    "rgba(173, 129, 255,0.1)"
-  ],
-  "indentRainbow.errorColor": "rgba(255, 255, 255,0.6)",
-  "indentRainbow.lightIndicatorStyleLineWidth": 5,
-  "markdown-checkbox.typeOfBulletPoint": "-",
-  "markdown-header-coloring.userDefinedHeaderColor": {
-    "enabled": true,
-    "Header_1": {
-      "backgroundColor": "background: #f92672; opacity: 0.5",
-      "color": "",
-      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
-    },
-    "Header_2": {
-      "backgroundColor": "background: #fd971f; opacity: 0.5",
-      "color": "",
-      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
-    },
-    "Header_3": {
-      "backgroundColor": "background: #e6db74; opacity: 0.5",
-      "color": "",
-      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
-    },
-    "Header_4": {
-      "backgroundColor": "background: #a6e22e; opacity: 0.5",
-      "color": "",
-      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
-    },
-    "Header_5": {
-      "backgroundColor": "background: #66d9ef; opacity: 0.5",
-      "color": "",
-      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
-    },
-    "Header_6": {
-      "backgroundColor": "background: #ae81ff; opacity: 0.5",
-      "color": "",
-      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
-    }
-  },
-  "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid@9.0.1/dist/mermaid.min.js",
-  "markdown-pdf.outputDirectoryRelativePathFile": true,
-  "markdown-preview-enhanced.previewTheme": "atom-light.css",
-  "markdown.preview.typographer": true,
-  "markdownlint.config": {
-    "MD014": false,
-    "MD018": false,
-    "MD024": false,
-    "MD025": false,
-    "MD026": false,
-    "MD028": false,
-    "MD033": false,
-    "MD041": false,
-    "MD045": false,
-    "MD046": false
-  },
-  "markdownShortcuts.bullets.marker": "-",
-  "material-icon-theme.folders.color": "#fdd835",
-  "material-icon-theme.folders.theme": "specific",
-  "material-icon-theme.saturation": 1,
-  "notebook.lineNumbers": "on",
-  "pasteImage.basePath": "${currentFileDir}/assets",
-  "pasteImage.filePathConfirmInputBoxMode": "onlyName",
-  "pasteImage.insertPattern": "${imageSyntaxPrefix}./assets/${imageFilePath}${imageSyntaxSuffix}",
-  "pasteImage.namePrefix": "${currentFileNameWithoutExt}_",
-  "pasteImage.path": "${currentFileDir}/assets",
-  "peacock.affectActivityBar": false,
-  "peacock.affectStatusBar": false,
-  "peacock.affectTitleBar": true,
-  "powermode.combo.counterEnabled": "hide",
-  "powermode.combo.location": "off",
-  "powermode.combo.timerEnabled": "hide",
-  "powermode.enabled": true,
-  "powermode.shake.enabled": false,
-  "readTime.enabled": true,
-  "redhat.telemetry.enabled": false,
-  "remote.SSH.showLoginTerminal": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "tailwindCSS.colorDecorators": false,
-  "terminal.explorerKind": "external",
-  "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.gpuAcceleration": "off",
-  "vim.easymotion": true,
-  "vim.hlsearch": true,
-  "vim.incsearch": true,
-  "vim.leader": "space",
-  "vim.normalModeKeyBindings": [
-    {
-      "before": ["<C-h>"],
-      "commands": ["workbench.action.navigateLeft"]
-    },
-    {
-      "before": ["<C-j>"],
-      "commands": ["workbench.action.navigateDown"]
-    },
-    {
-      "before": ["<C-k>"],
-      "commands": ["workbench.action.navigateUp"]
-    },
-    {
-      "before": ["<C-l>"],
-      "commands": ["workbench.action.navigateRight"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["editor.action.goToReferences"]
-    },
-    {
-      "before": ["leader", "w"],
-      "commands": ["workbench.action.files.save"]
-    },
-    {
-      "before": ["leader", "q"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
-      "before": ["leader", "W"],
-      "commands": ["editor.action.toggleWordWrap"]
-    },
-    {
-      "before": ["leader", "n"],
-      "commands": [":nohl"]
-    },
-    {
-      "before": ["leader", "i"],
-      "commands": ["editor.action.insertSnippet"]
-    },
-    {
-      "before": ["leader", ";"],
-      "commands": ["workbench.action.showCommands"]
-    },
-    {
-      "before": ["leader", "b", "b"],
-      "commands": ["workbench.action.showAllEditors"]
-    },
-    {
-      "before": ["leader", "b", "B"],
-      "commands": ["workbench.action.showEditorsInActiveGroup"]
-    },
-    {
-      "before": ["leader", "b", "h"],
-      "commands": ["workbench.action.moveEditorToLeftGroup"]
-    },
-    {
-      "before": ["leader", "b", "j"],
-      "commands": ["workbench.action.moveEditorToBelowGroup"]
-    },
-    {
-      "before": ["leader", "b", "k"],
-      "commands": ["workbench.action.moveEditorToAboveGroup"]
-    },
-    {
-      "before": ["leader", "b", "l"],
-      "commands": ["workbench.action.moveEditorToRightGroup"]
-    },
-    {
-      "before": ["leader", "b", "d"],
-      "commands": ["workbench.action.closeOtherEditors"]
-    },
-    {
-      "before": ["leader", "b", "n"],
-      "commands": ["workbench.action.files.newUntitledFile"]
-    },
-    {
-      "before": ["leader", "b", "r"],
-      "commands": ["workbench.action.reopenClosedEditor"]
-    },
-    {
-      "before": ["leader", "l", "p"],
-      "commands": ["workbench.actions.view.problems"]
-    },
-    {
-      "before": ["leader", "l", ";"],
-      "commands": ["editor.action.refactor"]
-    },
-    {
-      "before": ["leader", "l", "a"],
-      "commands": ["editor.action.autoFix"]
-    },
-    {
-      "before": ["leader", "l", "e"],
-      "commands": [
-        "workbench.actions.view.problems",
-        "editor.action.marker.next"
-      ]
-    },
-    {
-      "before": ["leader", "l", "E"],
-      "commands": ["editor.action.marker.nextInFiles"]
-    },
-    {
-      "before": ["leader", "l", "q"],
-      "commands": ["editor.action.quickFix"]
-    },
-    {
-      "before": ["leader", "l", "r"],
-      "commands": ["editor.action.rename"]
-    },
-    {
-      "before": ["leader", "l", "R"],
-      "commands": ["references-view.find"]
-    },
-    {
-      "before": ["leader", "l", "n"],
-      "commands": ["editor.action.nextMatchFindAction"]
-    },
-    {
-      "before": ["leader", "l", "N"],
-      "commands": ["editor.action.previousMatchFindAction"]
-    },
-    {
-      "before": ["leader", "f", "w"],
-      "commands": ["workbench.action.files.showOpenedFileInNewWindow"]
-    },
-    {
-      "before": ["leader", "f", "r"],
-      "commands": ["workbench.action.openRecent"]
-    },
-    {
-      "before": ["leader", "f", "R"],
-      "commands": [
-        "workbench.files.action.showActiveFileInExplorer",
-        "renameFile"
-      ]
-    },
-    {
-      "before": ["leader", "f", "y"],
-      "commands": ["workbench.action.files.copyPathOfActiveFile"]
-    },
-    {
-      "before": ["leader", "f", "Y"],
-      "commands": ["copyRelativeFilePath"]
-    },
-    {
-      "before": ["leader", "f", "f"],
-      "commands": ["revealFileInOS"]
-    },
-    {
-      "before": ["leader", "o", "f"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    {
-      "before": ["leader", "o", "d"],
-      "commands": ["workbench.action.files.openFolder"]
-    },
-    {
-      "before": ["leader", "o", "r"],
-      "commands": ["workbench.action.openRecent"]
-    },
-    {
-      "before": ["leader", "leader", "a"],
-      "commands": [
-        "workbench.action.toggleStatusbarVisibility",
-        "workbench.action.toggleActivityBarVisibility",
-        "editor.action.toggleMinimap",
-        "breadcrumbs.toggle"
-      ]
-    },
-    {
-      "before": ["leader", "leader", "W"],
-      "commands": ["editor.action.toggleWordWrap"]
-    },
-    {
-      "before": ["leader", "leader", "z"],
-      "commands": ["workbench.action.toggleZenMode"]
-    },
-    {
-      "before": ["leader", "w", "-"],
-      "commands": ["workbench.action.splitEditorDown"]
-    },
-    {
-      "before": ["leader", "w", "/"],
-      "commands": ["workbench.action.splitEditor"]
-    },
-    {
-      "before": ["leader", "w", "h"],
-      "commands": ["workbench.action.moveActiveEditorGroupLeft"]
-    },
-    {
-      "before": ["leader", "w", "j"],
-      "commands": ["workbench.action.moveActiveEditorGroupDown"]
-    },
-    {
-      "before": ["leader", "w", "k"],
-      "commands": ["workbench.action.moveActiveEditorGroupUp"]
-    },
-    {
-      "before": ["leader", "w", "l"],
-      "commands": ["workbench.action.moveActiveEditorGroupRight"]
-    },
-    {
-      "before": ["leader", "w", "t"],
-      "commands": ["workbench.action.toggleEditorWidths"]
-    },
-    {
-      "before": ["leader", "w", "="],
-      "commands": ["workbench.action.evenEditorWidths"]
-    },
-    {
-      "before": ["leader", "w", "x"],
-      "commands": ["workbench.action.closeAllGroups"]
-    },
-    {
-      "before": ["leader", "w", "z"],
-      "commands": ["workbench.action.joinAllGroups"]
-    },
-    {
-      "before": ["leader", "e"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
-    {
-      "before": ["leader", "leader", "g"],
-      "commands": ["workbench.view.scm"]
-    },
-    {
-      "before": ["leader", "leader", "T"],
-      "commands": ["workbench.view.extension.todo-tree-container"]
-    },
-    {
-      "before": ["leader", "leader", "e"],
-      "commands": ["workbench.view.extensions"]
-    },
-    {
-      "before": ["leader", "leader", "f"],
-      "commands": ["editor.action.startFindReplaceAction"]
-    },
-    {
-      "before": ["leader", "leader", "F"],
-      "commands": ["workbench.action.replaceInFiles"]
-    },
-    {
-      "before": ["leader", "leader", "r"],
-      "commands": ["workbench.view.extension.references-view"]
-    },
-    {
-      "before": ["leader", "leader", "G"],
-      "commands": ["workbench.view.extension.github-pull-requests"]
-    },
-    {
-      "before": ["leader", "leader", "p"],
-      "commands": ["workbench.view.extension.project-manager"]
-    },
-    {
-      "before": ["leader", "leader", "d"],
-      "commands": ["workbench.view.extension.dendron-view"]
-    },
-    {
-      "before": ["leader", "leader", "c"],
-      "commands": ["workbench.view.extension.thunder-client"]
-    },
-    {
-      "before": ["leader", "t"],
-      "commands": ["workbench.action.terminal.toggleTerminal"]
-    },
-    {
-      "before": ["leader", "leader", "t"],
-      "commands": ["workbench.action.togglePanel"]
-    },
-    {
-      "after": ["leader", "leader", "s"],
-      "before": ["leader", "s"]
-    }
-  ],
-  "vim.vimrc.enable": true,
-  "vim.vimrc.path": "/Users/parkjaewoong/.config/nvim/init.lua",
-  "vscodeGoogleTranslate.preferredLanguage": "Korean",
-  "window.commandCenter": true,
-  "window.titleBarStyle": "custom",
-  "workbench.colorCustomizations": {
-    "editor.lineHighlightBackground": "#99adbf1d",
-    "editor.lineHighlightBorder": "#187a751f",
-    "editorBracketHighlight.foreground1": "#f92672",
-    "editorBracketHighlight.foreground2": "#fd971f",
-    "editorBracketHighlight.foreground3": "#e6db74",
-    "editorBracketHighlight.foreground4": "#a6e22e",
-    "editorBracketHighlight.foreground5": "#66d9ef",
-    "editorBracketHighlight.foreground6": "#ae81ff",
-    "editorBracketHighlight.unexpectedBracket.foreground": "#ffffff"
-  },
-  "markdownTableRainbow.colors": [
-    "#f9267240",
-    "#fd971f40",
-    "#e6db7440",
-    "#a6e22e40",
-    "#66d9ef40",
-    "#ae81ff40"
-  ],
-  "markdownTableRainbow.cursorColor": "#99adbf1d",
-  "workbench.colorTheme": "Popping and Locking",
-  "workbench.editor.closeOnFileDelete": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.layoutControl.enabled": false,
-  "workbench.panel.opensMaximized": "never",
-  "workbench.settings.openDefaultKeybindings": true,
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.tips.enabled": false,
-  "zenMode.fullScreen": false,
-  "zenMode.hideActivityBar": false,
-  "zenMode.hideLineNumbers": false,
-  "zenMode.hideStatusBar": false,
-  "trailing-spaces.trimOnSave": true,
-  "files.trimFinalNewlines": true,
-  "bujo.scheduler.plannerPrefix": "daily.journal",
-  "discord.removeTimestamp": true,
-  "todomd.activatePattern": "**/{daily.journal.*.*}.md",
-  "todo-tree.highlights.enabled": false,
   "editor.tokenColorCustomizations": {
     // Override the editor colors for specific scopes.
     "[Popping and Locking]": {
@@ -585,48 +164,880 @@
         {
           "scope": "bujo.grid.vertical",
           "settings": {
-            "foreground": "#ffffff",
-            "fontStyle": "bold"
+            "fontStyle": "bold",
+            "foreground": "#ffffff"
           }
         },
         {
           "scope": "bujo.grid.colon",
           "settings": {
-            "foreground": "#ffffff",
-            "fontStyle": "bold"
+            "fontStyle": "bold",
+            "foreground": "#ffffff"
           }
         },
         {
           "scope": "bujo.grid.horizontal",
           "settings": {
-            "foreground": "#ffffff",
-            "fontStyle": "bold"
+            "fontStyle": "bold",
+            "foreground": "#ffffff"
           }
         }
       ]
     }
   },
-  "markdown-preview-enhanced.alwaysShowBacklinksInPreview": true,
-  "workbench.activityBar.location": "top",
-  "editor.minimap.enabled": false,
-  "[css]": {
-    "editor.defaultFormatter": "williamdang.vscode-simply-css-formatter"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
-  "lldb.launch.expressions": "native",
-  "security.promptForLocalFileProtocolHandling": false,
-  "betterAlign.operatorPadding": "left",
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.wordWrap": "off",
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "explorer.compactFolders": false,
+  "explorer.incrementalNaming": "smart",
+  "explorer.openEditors.sortOrder": "alphabetical",
+  "explorer.openEditors.visible": 1,
+  "extensions.autoUpdate": false,
+  "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 10000,
-  "flake8.args": ["--max-line-length=120", "--ignore=E203, E704"],
-  "black-formatter.args": ["--line-length=120"],
-  "githubPullRequests.upstreamRemote": "never",
-  "accessibility.signals.terminalBell": {
-    "sound": "on"
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "flake8.args": [
+    "--max-line-length=180",
+    "--ignore=E203, E501, E701, W503, E221, E722, F401, F541, F841, E202, F821"
+  ],
+  "flutterStylizer": {
+    "groupAndSortGetterMethods": true,
+    "groupAndSortVariableTypes": true,
+    "memberOrdering": [
+      "public-constructor",
+      "named-constructors",
+      "public-static-variables",
+      "public-instance-variables",
+      "public-override-variables",
+      "private-static-variables",
+      "private-instance-variables",
+      "public-override-methods",
+      "public-other-methods",
+      "private-other-methods",
+      "build-method"
+    ],
+    "processEnumsLikeClasses": true,
+    "sortClassesWithinFile": true,
+    "sortOtherMethods": true
   },
-  "[lua]": {
-    "editor.defaultFormatter": "Koihik.vscode-lua-format"
-  }
+  "footsteps.doHighlightChanges": true,
+  "footsteps.highlightColor": "rgb(255, 255, 255)",
+  "footsteps.highlightColorMaxOpacity": 0.1,
+  "git.autofetch": true,
+  "git.autoStash": true,
+  "git.openRepositoryInParentFolders": "never",
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": false,
+    "plaintext": true,
+    "scminput": false,
+    "yaml": false
+  },
+  "githubPullRequests.upstreamRemote": "never",
+  "gremlins.showInProblemPane": true,
+  "hediet.vscode-drawio.theme": "dark",
+  "indentRainbow.colors": [
+    "rgba(249, 38, 114,0.1)",
+    "rgba(253, 151, 31,0.1)",
+    "rgba(230, 219, 116,0.1)",
+    "rgba(166, 226, 46,0.1)",
+    "rgba(102, 216, 239,0.1)",
+    "rgba(173, 129, 255,0.1)"
+  ],
+  "indentRainbow.errorColor": "rgba(255, 255, 255,0.6)",
+  "indentRainbow.lightIndicatorStyleLineWidth": 5,
+  "jupyter.askForKernelRestart": false,
+  "lldb.launch.expressions": "native",
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "markdown-checkbox.typeOfBulletPoint": "-",
+  "markdown-header-coloring.userDefinedHeaderColor": {
+    "enabled": true,
+    "Header_1": {
+      "backgroundColor": "background: #f92672; opacity: 0.5",
+      "color": "",
+      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
+    },
+    "Header_2": {
+      "backgroundColor": "background: #fd971f; opacity: 0.5",
+      "color": "",
+      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
+    },
+    "Header_3": {
+      "backgroundColor": "background: #e6db74; opacity: 0.5",
+      "color": "",
+      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
+    },
+    "Header_4": {
+      "backgroundColor": "background: #a6e22e; opacity: 0.5",
+      "color": "",
+      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
+    },
+    "Header_5": {
+      "backgroundColor": "background: #66d9ef; opacity: 0.5",
+      "color": "",
+      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
+    },
+    "Header_6": {
+      "backgroundColor": "background: #ae81ff; opacity: 0.5",
+      "color": "",
+      "textDecoration": "color: #ffffff; font-weight: 600; font-size: 1em; text-shadow :5px  5px 5px rgba(0,0,0,0.08),-5px  5px 5px rgba(0,0,0,0.08),5px -5px 5px rgba(0,0,0,0.08),-5px -5px 5px rgba(0,0,0,0.08),5px  0px 5px rgba(0,0,0,0.08),0px  5px 5px rgba(0,0,0,0.08),-5px  0px 5px rgba(0,0,0,0.08),0px -5px 5px rgba(0,0,0,0.08)"
+    }
+  },
+  "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid@9.0.1/dist/mermaid.min.js",
+  "markdown-pdf.outputDirectoryRelativePathFile": true,
+  "markdown-preview-enhanced.alwaysShowBacklinksInPreview": true,
+  "markdown-preview-enhanced.previewTheme": "atom-light.css",
+  "markdown.preview.typographer": true,
+  "markdownlint.config": {
+    "MD014": false,
+    "MD018": false,
+    "MD024": false,
+    "MD025": false,
+    "MD026": false,
+    "MD028": false,
+    "MD033": false,
+    "MD041": false,
+    "MD045": false,
+    "MD046": false
+  },
+  "markdownShortcuts.bullets.marker": "-",
+  "markdownTableRainbow.colors": [
+    "#f9267240",
+    "#fd971f40",
+    "#e6db7440",
+    "#a6e22e40",
+    "#66d9ef40",
+    "#ae81ff40"
+  ],
+  "markdownTableRainbow.cursorColor": "#99adbf1d",
+  "material-icon-theme.folders.color": "#fdd835",
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.saturation": 1,
+  "notebook.cellToolbarVisibility": "hover",
+  "notebook.consolidatedRunButton": true,
+  "notebook.diff.overviewRuler": true,
+  "notebook.formatOnSave.enabled": true,
+  "notebook.insertFinalNewline": true,
+  "notebook.lineNumbers": "on",
+  "pasteImage.basePath": "${currentFileDir}/assets",
+  "pasteImage.filePathConfirmInputBoxMode": "onlyName",
+  "pasteImage.insertPattern": "${imageSyntaxPrefix}./assets/${imageFilePath}${imageSyntaxSuffix}",
+  "pasteImage.namePrefix": "${currentFileNameWithoutExt}_",
+  "pasteImage.path": "${currentFileDir}/assets",
+  "peacock.affectActivityBar": false,
+  "peacock.affectStatusBar": false,
+  "peacock.affectTitleBar": true,
+  "pylint.args": [
+    "--max-line-length=150",
+    "--disable=C0114, C0115, C0116"
+  ],
+  "readTime.enabled": true,
+  "redhat.telemetry.enabled": false,
+  "remote.SSH.showLoginTerminal": true,
+  "security.promptForLocalFileProtocolHandling": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "tailwindCSS.colorDecorators": false,
+  "terminal.explorerKind": "external",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.gpuAcceleration": "off",
+  "todo-tree.highlights.enabled": false,
+  "todomd.activatePattern": "**/{daily.journal.*.*}.md",
+  "trailing-spaces.trimOnSave": true,
+  "vim.easymotion": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.leader": "space",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "workbench.action.navigateLeft"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "commands": [
+        "workbench.action.navigateDown"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "commands": [
+        "workbench.action.navigateUp"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "workbench.action.navigateRight"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "W"
+      ],
+      "commands": [
+        "editor.action.toggleWordWrap"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "n"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "i"
+      ],
+      "commands": [
+        "editor.action.insertSnippet"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        ";"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "b",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.showAllEditors"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "b",
+        "B"
+      ],
+      "commands": [
+        "workbench.action.showEditorsInActiveGroup"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "b",
+        "h"
+      ],
+      "commands": [
+        "workbench.action.moveEditorToLeftGroup"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "b",
+        "j"
+      ],
+      "commands": [
+        "workbench.action.moveEditorToBelowGroup"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "b",
+        "k"
+      ],
+      "commands": [
+        "workbench.action.moveEditorToAboveGroup"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "b",
+        "l"
+      ],
+      "commands": [
+        "workbench.action.moveEditorToRightGroup"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "b",
+        "d"
+      ],
+      "commands": [
+        "workbench.action.closeOtherEditors"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "b",
+        "n"
+      ],
+      "commands": [
+        "workbench.action.files.newUntitledFile"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "b",
+        "r"
+      ],
+      "commands": [
+        "workbench.action.reopenClosedEditor"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        "p"
+      ],
+      "commands": [
+        "workbench.actions.view.problems"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        ";"
+      ],
+      "commands": [
+        "editor.action.refactor"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        "a"
+      ],
+      "commands": [
+        "editor.action.autoFix"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        "e"
+      ],
+      "commands": [
+        "workbench.actions.view.problems",
+        "editor.action.marker.next"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        "E"
+      ],
+      "commands": [
+        "editor.action.marker.nextInFiles"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        "q"
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        "r"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        "R"
+      ],
+      "commands": [
+        "references-view.find"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        "n"
+      ],
+      "commands": [
+        "editor.action.nextMatchFindAction"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l",
+        "N"
+      ],
+      "commands": [
+        "editor.action.previousMatchFindAction"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "f",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.showOpenedFileInNewWindow"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "f",
+        "r"
+      ],
+      "commands": [
+        "workbench.action.openRecent"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "f",
+        "R"
+      ],
+      "commands": [
+        "workbench.files.action.showActiveFileInExplorer",
+        "renameFile"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "f",
+        "y"
+      ],
+      "commands": [
+        "workbench.action.files.copyPathOfActiveFile"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "f",
+        "Y"
+      ],
+      "commands": [
+        "copyRelativeFilePath"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "f",
+        "f"
+      ],
+      "commands": [
+        "revealFileInOS"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "o",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "o",
+        "d"
+      ],
+      "commands": [
+        "workbench.action.files.openFolder"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "o",
+        "r"
+      ],
+      "commands": [
+        "workbench.action.openRecent"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "a"
+      ],
+      "commands": [
+        "workbench.action.toggleStatusbarVisibility",
+        "workbench.action.toggleActivityBarVisibility",
+        "editor.action.toggleMinimap",
+        "breadcrumbs.toggle"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "W"
+      ],
+      "commands": [
+        "editor.action.toggleWordWrap"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "z"
+      ],
+      "commands": [
+        "workbench.action.toggleZenMode"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "-"
+      ],
+      "commands": [
+        "workbench.action.splitEditorDown"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "/"
+      ],
+      "commands": [
+        "workbench.action.splitEditor"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "h"
+      ],
+      "commands": [
+        "workbench.action.moveActiveEditorGroupLeft"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "j"
+      ],
+      "commands": [
+        "workbench.action.moveActiveEditorGroupDown"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "k"
+      ],
+      "commands": [
+        "workbench.action.moveActiveEditorGroupUp"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "l"
+      ],
+      "commands": [
+        "workbench.action.moveActiveEditorGroupRight"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.toggleEditorWidths"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "="
+      ],
+      "commands": [
+        "workbench.action.evenEditorWidths"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "x"
+      ],
+      "commands": [
+        "workbench.action.closeAllGroups"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w",
+        "z"
+      ],
+      "commands": [
+        "workbench.action.joinAllGroups"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "g"
+      ],
+      "commands": [
+        "workbench.view.scm"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "T"
+      ],
+      "commands": [
+        "workbench.view.extension.todo-tree-container"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "e"
+      ],
+      "commands": [
+        "workbench.view.extensions"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "f"
+      ],
+      "commands": [
+        "editor.action.startFindReplaceAction"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "F"
+      ],
+      "commands": [
+        "workbench.action.replaceInFiles"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "r"
+      ],
+      "commands": [
+        "workbench.view.extension.references-view"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "G"
+      ],
+      "commands": [
+        "workbench.view.extension.github-pull-requests"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "p"
+      ],
+      "commands": [
+        "workbench.view.extension.project-manager"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "d"
+      ],
+      "commands": [
+        "workbench.view.extension.dendron-view"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "c"
+      ],
+      "commands": [
+        "workbench.view.extension.thunder-client"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.terminal.toggleTerminal"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "leader",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.togglePanel"
+      ]
+    },
+    {
+      "after": [
+        "leader",
+        "leader",
+        "s"
+      ],
+      "before": [
+        "leader",
+        "s"
+      ]
+    }
+  ],
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "/Users/parkjaewoong/.config/nvim/init.lua",
+  "vscodeGoogleTranslate.preferredLanguage": "English",
+  "window.commandCenter": true,
+  "window.titleBarStyle": "custom",
+  "workbench.activityBar.location": "top",
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#99adbf1d",
+    "editor.lineHighlightBorder": "#187a751f",
+    "editorBracketHighlight.foreground1": "#f92672",
+    "editorBracketHighlight.foreground2": "#fd971f",
+    "editorBracketHighlight.foreground3": "#e6db74",
+    "editorBracketHighlight.foreground4": "#a6e22e",
+    "editorBracketHighlight.foreground5": "#66d9ef",
+    "editorBracketHighlight.foreground6": "#ae81ff",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#ffffff"
+  },
+  "workbench.colorTheme": "Popping and Locking",
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
+  "workbench.panel.opensMaximized": "never",
+  "workbench.settings.openDefaultKeybindings": true,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.tips.enabled": false,
+  "zenMode.fullScreen": false,
+  "zenMode.hideActivityBar": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false
 }
