@@ -13,14 +13,16 @@
     "editor.formatOnSave": true,
     "editor.inlayHints.enabled": "on"
   },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnType": true
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.quickSuggestions": {
       "strings": true
@@ -40,6 +42,9 @@
     "editor.wordWrapColumn": 120
   },
   "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
+    },
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
@@ -51,7 +56,13 @@
     "editor.defaultFormatter": "vscode.css-language-features"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnType": true
@@ -62,8 +73,13 @@
   "accessibility.signals.terminalBell": {
     "sound": "on"
   },
+  "autoAlign.associations": {
+    "": "||",
+    "bsv": "|",
+    "csv": ","
+  },
   "black-formatter.args": [
-    "--line-length=180"
+    "--line-length=150"
   ],
   "bujo.scheduler.plannerPrefix": "daily.journal",
   "codesnap.transparentBackground": true,
@@ -98,7 +114,7 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.colorDecoratorsLimit": 5000,
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "'D2Coding ligature', GalmuriMono9, gamer, alagard, joystix, Galmuri7, NanumGothicCoding ",
+  "editor.fontFamily": "D2CodingLigature Nerd Font, 'D2Coding ligature', GalmuriMono9, gamer, alagard, joystix, Galmuri7, NanumGothicCoding ",
   "editor.fontLigatures": true,
   "editor.fontSize": 17,
   // "editor.cursorSurroundingLines": 1000,
@@ -110,14 +126,15 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlayHints.padding": true,
   "editor.inlineSuggest.enabled": true,
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
   "editor.renderLineHighlight": "all",
   "editor.renderWhitespace": "all",
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "editor.showFoldingControls": "never",
+  "editor.showFoldingControls": "always",
   // "editor.stickyScroll.enabled": true,
   "editor.suggest.preview": true,
   "editor.suggestSelection": "first",
@@ -195,6 +212,7 @@
     "typescriptreact"
   ],
   "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
   "explorer.incrementalNaming": "smart",
   "explorer.openEditors.sortOrder": "alphabetical",
   "explorer.openEditors.visible": 1,
@@ -206,7 +224,7 @@
   "files.trimTrailingWhitespace": true,
   "flake8.args": [
     "--max-line-length=180",
-    "--ignore=E203, E501, E701, W503, E221, E722, F401, F541, F841, E202, F821"
+    "--ignore=E203, E501, E701, W503, E221, E722, F401, F541, F841, E202, F821, W605, E402, E731"
   ],
   "flutterStylizer": {
     "groupAndSortGetterMethods": true,
@@ -242,6 +260,7 @@
     "yaml": false
   },
   "githubPullRequests.upstreamRemote": "never",
+  "gitlens.rebaseEditor.ordering": "asc",
   "gremlins.showInProblemPane": true,
   "hediet.vscode-drawio.theme": "dark",
   "indentRainbow.colors": [
@@ -254,6 +273,10 @@
   ],
   "indentRainbow.errorColor": "rgba(255, 255, 255,0.6)",
   "indentRainbow.lightIndicatorStyleLineWidth": 5,
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
   "jupyter.askForKernelRestart": false,
   "lldb.launch.expressions": "native",
   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
@@ -337,8 +360,10 @@
   "peacock.affectTitleBar": true,
   "pylint.args": [
     "--max-line-length=150",
-    "--disable=C0114, C0115, C0116"
+    "--disable=C0114, C0115, C0116, I1101, C0302",
+    "--init-hook='import sys; sys.path.append(\".\")'"
   ],
+  "pylint.importStrategy": "fromEnvironment",
   "readTime.enabled": true,
   "redhat.telemetry.enabled": false,
   "remote.SSH.showLoginTerminal": true,
@@ -1012,9 +1037,10 @@
   ],
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "/Users/parkjaewoong/.config/nvim/init.lua",
-  "vscodeGoogleTranslate.preferredLanguage": "English",
+  "vscodeGoogleTranslate.preferredLanguage": "Korean",
   "window.commandCenter": true,
   "window.titleBarStyle": "custom",
+  "window.zoomLevel": -1,
   "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#99adbf1d",
@@ -1029,7 +1055,6 @@
   },
   "workbench.colorTheme": "Popping and Locking",
   "workbench.editor.closeOnFileDelete": true,
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
   "workbench.panel.opensMaximized": "never",
   "workbench.settings.openDefaultKeybindings": true,
