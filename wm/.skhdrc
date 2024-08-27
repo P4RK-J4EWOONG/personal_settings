@@ -31,6 +31,7 @@ shift + ctrl + cmd - r  : yabai --restart-service
 
 # modify space layout
 shift + ctrl - s        : yabai -m window --toggle sticky
+# shift + ctrl - a        : yabai -m window --toggle float
 
 # swap window
 shift + alt + ctrl - h  : WIN_ID=$(yabai -m query --windows --window | jq '.id'); yabai -m window --swap west; [[ ! $? == 0 ]] && (yabai -m display --focus west; yabai -m window last  --insert east; yabai -m window --focus $WIN_ID; yabai -m window --display prev; yabai -m window --focus $WIN_ID);
@@ -89,6 +90,7 @@ shift + cmd + ctrl - 9  : yabai -m window --space  9; yabai -m space --focus 9
 # float / unfloat window and center on screen
 # <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
 shift + ctrl - c        : yabai -m window --toggle float; yabai -m window --grid 100:100:1:1:98:98
+shift + ctrl - f        : yabai -m window --toggle native-fullscreen
 shift + ctrl - d        : yabai -m window --toggle zoom-parent
 shift + ctrl - t        : yabai -m window --toggle float; yabai -m window --grid 50:100:1:35:98:20
 
@@ -101,4 +103,8 @@ shift + ctrl - o        : yabai -m window --toggle float; yabai -m window --grid
 shift + ctrl - q        : yabai -m display --focus 1
 shift + ctrl - w        : yabai -m display --focus 2
 
-# test
+fn - h : /opt/homebrew/bin/sendkeys -d 0 -i 0 --characters '<c:left>'
+fn - j : /opt/homebrew/bin/sendkeys -d 0 -i 0 --characters '<c:down>'
+fn - k : /opt/homebrew/bin/sendkeys -d 0 -i 0 --characters '<c:up>'
+fn - l : /opt/homebrew/bin/sendkeys -d 0 -i 0 --characters '<c:right>'
+fn - p : sendkeys -c "<mf:1000,200:50,20:180,900:2>"
