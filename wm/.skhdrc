@@ -100,3 +100,5 @@ shift + ctrl - o        : yabai -m window --toggle float; yabai -m window --grid
 
 shift + ctrl - q        : yabai -m display --focus 1
 shift + ctrl - w        : yabai -m display --focus 2
+
+# test
